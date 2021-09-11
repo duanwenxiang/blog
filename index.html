@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.fp.js"></script>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    width: 200px;
+    height: 50px;
+    background-color: #4590bb;
+    margin: 20px 40px 20px 100px;
+  }
+
+  div {
+    width: 300px;
+    height: 150px;
+    font-size: 40px;
+    line-height: 150px;
+    text-align: center;
+    background-color: #b3c6e8;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+</style>
+
+<body>
+  <ul>
+    <li draggable="true" ondragstart="drag(event)" id="li1" ondragend="dend(event)" ondragenter="enter(event)">1</li>
+    <li draggable="true" ondragstart="drag(event)" id="li2" ondragend="dend(event)" ondragenter="enter(event)">2</li>
+    <li draggable="true" ondragstart="drag(event)" id="li3" ondragend="dend(event)" ondragenter="enter(event)">3</li>
+    <li draggable="true" ondragstart="drag(event)" id="li4" ondragend="dend(event)" ondragenter="enter(event)">4</li>
+    <li draggable="true" ondragstart="drag(event)" id="li5" ondragend="dend(event)" ondragenter="enter(event)">5</li>
+    <li draggable="true" ondragstart="drag(event)" id="li6" ondragend="dend(event)" ondragenter="enter(event)">6</li>
+  </ul>
+  <div id="div" ondragenter="enter(event)" ondragover="over(event)" ondragleave="leave(event)" ondrop="drop(event)">垃圾箱
+  </div>
+</body>
+
+
+<script>
+  function drag(event) {
+    console.log('start============')
+    event.target.style.background = "red";
+    event.dataTransfer.setData("name", event.target.id)
+  }
+  function dend(event) {
+    console.log('end============')
+    event.target.style.background = "#4590bb";
+  }
+  //拖拽进入标签范围
+  function enter(event) {
+    console.log('enter=======')
+    document.getElementById("div").innerHTML = "释放删除";
+  }
+  function leave(event) {
+    console.log('leave========')
+    document.getElementById("div").innerHTML = "垃圾箱";
+  }
+  function drop(event) {
+    console.log('drop========')
+    //阻止浏览器默认事件
+    event.preventDefault();
+    document.getElementById("div").innerHTML = "正在删除";
+    var id = event.dataTransfer.getData("name");
+    var ul = document.getElementsByTagName("ul")[0];
+    ul.removeChild(document.getElementById(id));
+  }
+  function over(event) {
+    console.log('over==========')
+    event.preventDefault();
+  }
+</script>
