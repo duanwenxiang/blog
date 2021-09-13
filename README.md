@@ -1,4 +1,4 @@
-# 个人博客（前端切图仔）
+# 个人博客（[前端切图仔](https://duanwenxiang.github.io/blog/)）
 
 记录学习，分享知识
 
