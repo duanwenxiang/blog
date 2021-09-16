@@ -2,7 +2,6 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -96,7 +95,7 @@ export default function Home() {
                 </Grid>
                 <Grid item>
                   <Button variant="contained" color="primary">
-                    邮件
+                    邮箱
                   </Button>
                 </Grid>
               </Grid>
@@ -111,7 +110,7 @@ export default function Home() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://i0.hdslb.com/bfs/article/ee5f6e24f4395ddaf09a96dcfa26508ba17e1cde.jpg@942w_605h_progressive.webp"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
@@ -122,14 +121,6 @@ export default function Home() {
                       This is a media card. You can use this section to describe the content.
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
             ))}
