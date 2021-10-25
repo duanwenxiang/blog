@@ -10,26 +10,33 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import babyIco from "@/assets/img/baby.ico";
+import GitHubIcon from "@/assets/img/github.png";
+import EmailIcon from "@/assets/img/email.png";
+import WechatIcon from "@/assets/img/wechat.png";
 
 function Copyright() {
+  const time = new Date().toISOString().split("T")[0].split("-");
+  console.log(time);
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
+    <div>
+      <Typography variant="body2" color="textSecondary" align="center">
+        {"Copyright © "}前端切图仔
+      </Typography>
+      <Typography variant="body2" color="textSecondary" align="center">
+        {time[0]}年{time[1]}月{time[2]}日
+      </Typography>
+    </div>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    backgroundImage: 'url("http://api.btstu.cn/sjbz/?lx=fengjing")',
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+    padding: theme.spacing(16, 0),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -76,8 +83,7 @@ export default function Home() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography
-              component="h1"
-              variant="h2"
+              variant="h3"
               align="center"
               color="textPrimary"
               gutterBottom
@@ -87,7 +93,7 @@ export default function Home() {
             <Typography
               variant="h5"
               align="center"
-              color="textSecondary"
+              color="textPrimary"
               paragraph
             >
               记录学习，分享知识
@@ -96,19 +102,28 @@ export default function Home() {
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Button
-                    variant="outlined"
+                    variant="contained"
                     color="primary"
+                    startIcon={<img src={GitHubIcon} alt="" height={20} />}
                   >
-                    github.com
+                    GitHub
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<img src={WechatIcon} alt="" height={20} />}
+                  >
                     微信
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<img src={EmailIcon} alt="" height={20} />}
+                  >
                     邮箱
                   </Button>
                 </Grid>
@@ -124,7 +139,7 @@ export default function Home() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://i0.hdslb.com/bfs/article/ee5f6e24f4395ddaf09a96dcfa26508ba17e1cde.jpg@942w_605h_progressive.webp"
+                    image="http://api.btstu.cn/sjbz/"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
@@ -142,22 +157,9 @@ export default function Home() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
         <Copyright />
       </footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }
