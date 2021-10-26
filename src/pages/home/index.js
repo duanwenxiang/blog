@@ -14,10 +14,10 @@ import babyIco from "@/assets/img/baby.ico";
 import GitHubIcon from "@/assets/img/github.png";
 import EmailIcon from "@/assets/img/email.png";
 import WechatIcon from "@/assets/img/wechat.png";
+import mdList from "@/markdown";
 
 function Copyright() {
   const time = new Date().toISOString().split("T")[0].split("-");
-  console.log(time);
   return (
     <div>
       <Typography variant="body2" color="textSecondary" align="center">
@@ -62,9 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-
-export default function Home() {
+export default function Home(props) {
   const classes = useStyles();
 
   return (
@@ -79,7 +77,6 @@ export default function Home() {
         </Toolbar>
       </AppBar>
       <main>
-        {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography
@@ -132,24 +129,28 @@ export default function Home() {
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
+            {Object.keys(mdList).map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
+                <Card
+                  className={classes.card}
+                  onClick={() => {
+                    console.log(mdList[card]);
+                    props.history.push({
+                      pathname: "text/" + mdList[card].title,
+                    });
+                  }}
+                >
                   <CardMedia
                     className={classes.cardMedia}
-                    image="http://api.btstu.cn/sjbz/"
-                    title="Image title"
+                    image={mdList[card].img}
+                    title={mdList[card].title}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {mdList[card].title}
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
+                    <Typography>{mdList[card].info}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
