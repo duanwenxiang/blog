@@ -13,11 +13,17 @@ body {
   margin: 0;
 }
 img {
-  display: flex;
+  display: block;
 }
 .home_toolbar_img {
   margin-right: 10px;
 }
 .MuiButton-root {
   text-transform: none !important;
+}
+.react_markdown {
+  img {
+    width: 100%;
+    max-width: 500px;
+  }
 }

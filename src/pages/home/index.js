@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    cursor: "pointer",
   },
   cardMedia: {
     paddingTop: "56.25%", // 16:9
