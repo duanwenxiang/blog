@@ -136,7 +136,6 @@ export default function Home(props) {
                 <Card
                   className={classes.card}
                   onClick={() => {
-                    console.log(mdList[card]);
                     props.history.push({
                       pathname: "text/" + mdList[card].title,
                     });
