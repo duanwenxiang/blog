@@ -23,7 +23,7 @@
 首先实现一个模版：
 ```HTML
 <!-- templates（HTML模板） -->
-<template id="zz_card">
+<template id="zz_card">****
   <style>
     .zz_card_box {
       display: inline-block;

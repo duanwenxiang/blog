@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.d5185010.chunk.css",
-    "main.js": "/static/js/main.cc14b968.chunk.js",
-    "main.js.map": "/static/js/main.cc14b968.chunk.js.map",
+    "main.js": "/static/js/main.ad4b2c89.chunk.js",
+    "main.js.map": "/static/js/main.ad4b2c89.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c3b2879f.js",
     "runtime-main.js.map": "/static/js/runtime-main.c3b2879f.js.map",
     "static/js/2.55bac5f7.chunk.js": "/static/js/2.55bac5f7.chunk.js",
@@ -10,13 +10,14 @@
     "../index.html": "/../index.html",
     "static/css/main.d5185010.chunk.css.map": "/static/css/main.d5185010.chunk.css.map",
     "static/js/2.55bac5f7.chunk.js.LICENSE.txt": "/static/js/2.55bac5f7.chunk.js.LICENSE.txt",
-    "static/media/WebComponent.37dae195.md": "/static/media/WebComponent.37dae195.md",
+    "static/media/Vue3 响应性原理.7bc81ced.md": "/static/media/Vue3 响应性原理.7bc81ced.md",
+    "static/media/WebComponent.5768a39e.md": "/static/media/WebComponent.5768a39e.md",
     "static/media/baby.862465a9.ico": "/static/media/baby.862465a9.ico"
   },
   "entrypoints": [
     "static/js/runtime-main.c3b2879f.js",
     "static/js/2.55bac5f7.chunk.js",
     "static/css/main.d5185010.chunk.css",
-    "static/js/main.cc14b968.chunk.js"
+    "static/js/main.ad4b2c89.chunk.js"
   ]
 }
