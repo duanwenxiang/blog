@@ -58,7 +58,7 @@ const Text = (props) => {
         </AppBar>
         <Typography variant="body1" className={classes.body}>
           <ReactMarkdown
-            className='react_markdown'
+            className="react_markdown"
             children={data}
             skipHtml={true}
             components={{

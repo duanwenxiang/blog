@@ -7,12 +7,12 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
+import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import babyIco from "@/assets/img/baby.ico";
 import GitHubIcon from "@/assets/img/github.png";
-import EmailIcon from "@/assets/img/email.png";
 import WechatIcon from "@/assets/img/wechat.png";
 import mdList from "@/markdown";
 
@@ -103,27 +103,31 @@ export default function Home(props) {
                     variant="contained"
                     color="primary"
                     startIcon={<img src={GitHubIcon} alt="" height={20} />}
+                    onClick={() => {
+                      window.open("https://github.com/duanwenxiang");
+                    }}
                   >
                     GitHub
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<img src={WechatIcon} alt="" height={20} />}
+                  <Tooltip
+                    title={
+                      // eslint-disable-next-line jsx-a11y/alt-text
+                      <img
+                        style={{ width: "200px" }}
+                        src="https://i.niupic.com/images/2022/07/21/a16H.jpeg"
+                      ></img>
+                    }
                   >
-                    微信
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<img src={EmailIcon} alt="" height={20} />}
-                  >
-                    邮箱
-                  </Button>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      startIcon={<img src={WechatIcon} alt="" height={20} />}
+                    >
+                      微信
+                    </Button>
+                  </Tooltip>
                 </Grid>
               </Grid>
             </div>

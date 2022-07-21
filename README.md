@@ -7,6 +7,7 @@
 ### 文章目录
 
 1. Web Component 入门教程
+2. Vue3 响应性原理
 
 ### leetcode（力扣）
 
